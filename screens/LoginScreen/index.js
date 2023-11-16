@@ -1,22 +1,42 @@
 import React from "react";
-import { StyleSheet, ScrollView, SafeAreaView, Text } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, View, Button, Image } from "react-native";
 
-const LoginScreen = () => {
-  return <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={{
-      backgroundColor: "#f0f0f1",
-      padding: 10,
-      position: "relative",
-      flex: 1
-    }}>
-        <Text>Login Screen</Text>
-      </ScrollView>
+const App = () => {
+  return <SafeAreaView style={styles.container}>
+      <Image style={styles.logo} source={{
+      uri: "https://tinyurl.com/42evm3m3"
+    }} />
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#003f5c" />
+        <TextInput style={styles.input} placeholder="Password" placeholderTextColor="#003f5c" secureTextEntry />
+        <Button title="Login" onPress={() => {}} />
+      </View>
     </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    height: "100%"
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff"
+  },
+  logo: {
+    width: 150,
+    height: 150,
+    marginBottom: 50
+  },
+  inputContainer: {
+    width: "80%"
+  },
+  input: {
+    width: "100%",
+    height: 40,
+    borderColor: "#000",
+    borderWidth: 1,
+    marginVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 5
   }
 });
-export default LoginScreen;
+export default App;
